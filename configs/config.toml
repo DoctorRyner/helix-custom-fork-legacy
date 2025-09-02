@@ -18,12 +18,15 @@ undercurl = true
 idle-timeout = 0
 cursorline = true
 completion-trigger-len = 1
-# end-of-line-diagnostics = "hint"
+end-of-line-diagnostics = "disable"
 scrolloff = 15
 scroll-lines = 2
 completion-timeout = 5
 color-modes = true
 popup-border = "popup"
+
+[editor.inline-diagnostics]
+cursor-line = "disable"
 
 [editor.statusline]
 right = [
@@ -152,6 +155,7 @@ y = [
 ]
 "A-i" = ["expand_selection"]
 "A-e" = ["shrink_selection"]
+"C-n" = ["completion"]
 
 [keys.insert]
 "S-ret" = ["open_above", "move_line_down"]
@@ -177,7 +181,7 @@ y = [
 "A-0" = "goto_line_start"
 A-h = "signature_help"
 C-h = "signature_help"
-
+"C-n" = ["completion"]
 
 [keys.normal.space]
 q = ":quit"
