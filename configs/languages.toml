@@ -82,6 +82,7 @@ language-servers = [
 [[language]]
 name = "tsx"
 formatter = { command = "prettier", args = ["--stdin-filepath", "file.tsx"] }
+block-comment-tokens = [{start = "{/*", end = "*/}"}]
 file-types = ["tsx"]
 language-servers = [
   { name = "typescript-language-server", except-features = ["format"] },
@@ -147,6 +148,7 @@ language-servers = [
 
 [[language]]
 name = "svelte"
+block-comment-tokens = [{start = "<!--", end = "-->"}]
 language-servers = [
   { name = "svelteserver" },
   { name = "eslint" },

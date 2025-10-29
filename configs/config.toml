@@ -184,7 +184,6 @@ C-h = "signature_help"
 "C-n" = ["completion"]
 
 [keys.normal.space]
-q = ":quit"
 f = "file_picker_in_current_directory"
 F = "file_picker"
 w = [":format", ":w"]
@@ -194,6 +193,7 @@ x = ["yank_to_clipboard", "delete_selection"]
 "[" = "surround_delete"
 T = "goto_word"
 H = ":config-reload"
+c = "toggle_block_comments"
 
 [keys.select]
 q = ":clipboard-yank"
@@ -216,6 +216,7 @@ f = "extend_next_word_start"
 
 [keys.select.space]
 x = ["yank_to_clipboard", "delete_selection"]
+c = "toggle_block_comments"
 
 [keys.normal.'space'.'space']
 # Extensions using custom script
