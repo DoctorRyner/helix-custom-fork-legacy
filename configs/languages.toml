@@ -1,6 +1,6 @@
 [language-server.gpt]
 command = "bun"
-args = ["run", "/usr/local/bin/helix-gpt", "--handler", "copilot"]
+args = ["run", "/usr/local/bin/helix-gpt", "--handler", "copilot", "--triggerCharacters", ""]
 
 [language-server.uwu_colors]
 command = "uwu_colors"
