@@ -5,19 +5,22 @@ args = ["run", "/usr/local/bin/helix-gpt", "--handler", "copilot", "--triggerCha
 [language-server.uwu_colors]
 command = "uwu_colors"
 
-[language-server.typescript]
-command = "typescript-language-server"
-args = ["--stdio"]
-
-[language-server.typescript.config]
-typescript.tsserver.experimental.enableProjectDiagnostics = true
-
-[language-server.tsx.config]
-typescript.tsserver.experimental.enableProjectDiagnostics = true
-
-[language-server.tsx]
-command = "typescript-language-server"
-args = ["--stdio"]
+[language-server.typescript-language-server.config.typescript]
+updateImportsOnFileMove.enabled = "always"
+suggest.completeFunctionCalls = true
+tsserver.enableTracing = true
+inlayHints.parameterNames.enabled = "all"
+inlayHints.parameterTypes.enabled = true
+inlayHints.variableTypes.enabled = true
+inlayHints.propertyDeclarationTypes.enabled = true
+inlayHints.functionLikeReturnTypes = true
+inlayHints.enumMemberValues.enabled = true
+format.enable = false
+format.semicolons = "remove"
+preferences.importModuleSpecifier = "non-relative"
+preferences.importModuleSpecifierEnding = "auto"
+tsserver.pluginPaths = ["typescript-plugin-css-modules", "./node_modules"]
+tsserver.experimental.enableProjectDiagnostics = true
 
 [language-server.emmet-ls]
 command = "emmet-ls"

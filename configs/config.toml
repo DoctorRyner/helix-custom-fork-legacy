@@ -1,4 +1,4 @@
-theme = "alexandria"
+theme = "dark_plus"
 
 [editor.lsp]
 display-messages = true
@@ -18,7 +18,7 @@ undercurl = true
 idle-timeout = 0
 cursorline = true
 auto-completion = false
-completion-trigger-len = 1
+# completion-trigger-len = 2
 end-of-line-diagnostics = "disable"
 scrolloff = 15
 scroll-lines = 2
@@ -112,11 +112,11 @@ f = ["move_next_word_start", "collapse_selection"]
 "=" = "goto_line_end"
 "0" = "goto_line_start"
 # "C-n" = ["move_char_left", "collapse_selection"]
-"C-o" = ["move_char_right", "collapse_selection"]
-"C-e" = ["move_line_down", "collapse_selection"]
-"C-i" = ["move_line_up", "collapse_selection"]
-"C-w" = ["move_prev_word_start", "collapse_selection"]
-"C-f" = ["move_next_word_start", "collapse_selection"]
+# "C-o" = ["move_char_right", "collapse_selection"]
+# "C-e" = ["move_line_down", "collapse_selection"]
+# "C-i" = ["move_line_up", "collapse_selection"]
+# "C-w" = ["move_prev_word_start", "collapse_selection"]
+# "C-f" = ["move_next_word_start", "collapse_selection"]
 "A-'" = ["scroll_up", "scroll_up", "scroll_up", "scroll_up"]
 "A-/" = ["scroll_down", "scroll_down", "scroll_down", "scroll_down"]
 "S-up" = ["scroll_up", "scroll_up", "scroll_up"]
@@ -133,8 +133,8 @@ l = "jump_backward"
 "S-h" = "hsplit"
 "A-C" = "wclose"
 b = ":echo %sh{git show --no-patch --format='%%h (%%an: %%ar): %%s' $(git blame -p %{buffer_name} -L%{cursor_line},+1 | head -1 | cut -d' ' -f1)}"
-S-A-up = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
-S-A-down = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+C-i = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+C-e = ["extend_to_line_bounds", "delete_selection", "paste_after"]
 W = ":buffer-close"
 B = [
   ":write-all",
@@ -156,15 +156,16 @@ y = [
   ':set mouse true'
 ]
 "S-C-n" = ["completion"]
-"C-a" = "flip_selections"
+"C-'" = "flip_selections"
 "C-," = ":config-open"
 "C-r" = [":config-reload", ":reload-all", ":redraw"]
+"C-n" = "decrement"
+"C-o" = "increment"
 
 [keys.insert]
 "S-ret" = ["open_above", "move_line_down"]
 "ret" = ["insert_newline", "move_line_up", "insert_at_line_end", "move_line_down"]
 "A-i" = "insert_at_line_end"
-"§" = "completion"
 "A-{" = ":buffer-previous"
 "A-}" = ":buffer-next"
 "up" = "move_line_up"
@@ -184,7 +185,9 @@ y = [
 "A-0" = "goto_line_start"
 A-h = "signature_help"
 C-h = "signature_help"
-"C-n" = ["completion"]
+"C-n" = "goto_first_nonwhitespace"
+"C-o" = "goto_line_end"
+C-t = "completion"
 
 [keys.normal.space]
 f = "file_picker_in_current_directory"
@@ -203,8 +206,8 @@ q = ":clipboard-yank"
 t = "extend_to_word"
 y = [":clipboard-yank", "normal_mode"]
 Y = ":yank-diagnostic"
-"0" = "goto_line_start"
-"$" = "goto_line_end"
+"A-left" = "goto_line_start"
+"A-right" = "goto_line_end"
 G = "extend_to_file_end"
 n = "extend_char_left"
 o = "extend_char_right"
