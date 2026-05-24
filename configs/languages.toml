@@ -1,9 +1,23 @@
+[language-server.wakatime]
+command = "wakatime-ls"
+
 [language-server.gpt]
 command = "bun"
 args = ["run", "/usr/local/bin/helix-gpt", "--handler", "copilot", "--triggerCharacters", ""]
 
+# [language-server.gpt]
+# command = "helix-assist"
+# (Options)
+# args = ["--handler", "xai", "--num-suggestions", "2"]
+# args = ["--handler", "anthropic", "--num-suggestions", "2"]
+
 [language-server.uwu_colors]
 command = "uwu_colors"
+
+# [language-server.typescript-language-server]
+[language-server.tsgo]
+command = "tsgo"
+args = ["--lsp", "--stdio"]
 
 [language-server.typescript-language-server.config.typescript]
 updateImportsOnFileMove.enabled = "always"
@@ -75,11 +89,14 @@ name = "typescript"
 formatter = { command = "prettier", args = ["--parser", "typescript"] }
 file-types = ["ts"]
 language-servers = [
-  { name = "typescript-language-server", except-features = ["format"] },
+  # { name = "tsgo", except-features = ["format"] },
+  { name = "tsgo", except-features = ["format", "completion", "code-action"] },
+  { name = "typescript-language-server", only-features = ["completion", "code-action"] },
   { name = "eslint", except-features = ["format"] },
   { name = "emmet-ls" },
   { name = "uwu_colors" },
-  { name = "gpt" }
+  { name = "gpt" },
+  { name = "wakatime" }
 ]
 
 [[language]]
@@ -88,11 +105,14 @@ formatter = { command = "prettier", args = ["--stdin-filepath", "file.tsx"] }
 block-comment-tokens = [{start = "{/*", end = "*/}"}]
 file-types = ["tsx"]
 language-servers = [
-  { name = "typescript-language-server", except-features = ["format"] },
+  # { name = "tsgo", except-features = ["format"] },
+  { name = "tsgo", except-features = ["format", "completion", "code-action"] },
+  { name = "typescript-language-server", only-features = ["completion", "code-action"] },
   { name = "eslint", except-features = ["format"] },
   { name = "emmet-ls" },
   { name = "uwu_colors" },
-  { name = "gpt" }
+  { name = "gpt" },
+  { name = "wakatime" }
 ]
 
 [[language]]
@@ -101,7 +121,8 @@ file-types = ["hs"]
 language-servers = [
   { name = "haskell-language-server" },
   { name = "uwu_colors" },
-  { name = "gpt" }
+  { name = "gpt" },
+  { name = "wakatime" }
 ]
 
 [[language]]
@@ -109,7 +130,8 @@ name = "json"
 formatter = { command = "prettier", args = ["--parser", "json"] }
 language-servers = [
   { name = "uwu_colors" },
-  { name = "gpt" }
+  { name = "gpt" },
+  { name = "wakatime" }
 ]
 
 [[language]]
@@ -118,7 +140,8 @@ formatter = { command = "prettier", args = ["--parser", "yaml"] }
 language-servers = [
   { name = "yaml-language-server" },
   { name = "uwu_colors" },
-  { name = "gpt" }
+  { name = "gpt" },
+  { name = "wakatime" }
 ]
 
 [[language]]
@@ -127,7 +150,8 @@ language-servers = [
   { name = "vscode-html-language-server" },
   { name = "emmet-ls" },
   { name = "uwu_colors" },
-  { name = "gpt" }
+  { name = "gpt" },
+  { name = "wakatime" }
 ]
 formatter = { command = "prettier", args = ["--parser", "html"] }
 
@@ -137,7 +161,8 @@ language-servers = [
   { name = "vscode-css-language-server" },
   { name = "emmet-ls" },
   { name = "uwu_colors" },
-  { name = "gpt" }
+  { name = "gpt" },
+  { name = "wakatime" }
 ]
 formatter = { command = "prettier", args = ["--parser", "css"] }
 
@@ -146,7 +171,8 @@ name = "cpp"
 language-servers = [
   { name = "clangd" },
   { name = "uwu_colors" },
-  { name = "gpt" }
+  { name = "gpt" },
+  { name = "wakatime" }
 ]
 
 [[language]]
@@ -156,7 +182,8 @@ language-servers = [
   { name = "svelteserver" },
   { name = "eslint" },
   { name = "uwu_colors" },
-  { name = "gpt" }
+  { name = "gpt" },
+  { name = "wakatime" }
 ]
 
 [[language]]
@@ -164,7 +191,8 @@ name = "rust"
 language-servers = [
   { name = "rust-analyzer" },
   { name = "uwu_colors" },
-  { name = "gpt" }
+  { name = "gpt" },
+  { name = "wakatime" }
 ]
 
 [[language]]
@@ -172,7 +200,8 @@ name = "toml"
 language-servers = [
   { name = "taplo" },
   { name = "uwu_colors" },
-  { name = "gpt" }
+  { name = "gpt" },
+  { name = "wakatime" }
 ]
 
 [[language]]
@@ -180,5 +209,6 @@ name = "go"
 language-servers = [
   { name = "gopls" },
   { name = "uwu_colors" },
-  { name = "gpt" }
+  { name = "gpt" },
+  { name = "wakatime" }
 ]
