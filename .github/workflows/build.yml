@@ -32,7 +32,7 @@ jobs:
           shared-key: "build"
 
       - name: Cache tree-sitter grammars
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: runtime/grammars
           key: ${{ runner.os }}-stable-v${{ env.GRAMMAR_CACHE_VERSION }}-tree-sitter-grammars-${{ hashFiles('languages.toml') }}
@@ -62,7 +62,7 @@ jobs:
           shared-key: "build"
 
       - name: Cache tree-sitter grammars
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: runtime/grammars
           key: ${{ runner.os }}-stable-v${{ env.GRAMMAR_CACHE_VERSION }}-tree-sitter-grammars-${{ hashFiles('languages.toml') }}
@@ -97,7 +97,7 @@ jobs:
           shared-key: "build"
 
       - name: Cache tree-sitter grammars
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: runtime/grammars
           key: ${{ runner.os }}-stable-v${{ env.GRAMMAR_CACHE_VERSION }}-tree-sitter-grammars-${{ hashFiles('languages.toml') }}
@@ -132,7 +132,7 @@ jobs:
           shared-key: "build"
 
       - name: Cache tree-sitter grammars
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: runtime/grammars
           key: ${{ runner.os }}-stable-v${{ env.GRAMMAR_CACHE_VERSION }}-tree-sitter-grammars-${{ hashFiles('languages.toml') }}
