@@ -1,4 +1,4 @@
-theme = "dark_plus_adjusted"
+theme = "alexandria"
 
 [editor.lsp]
 display-messages = true
@@ -12,10 +12,12 @@ normal = "block"
 select = "underline"
 
 [editor.smart-tab]
-supersede-menu = true
+supersede-menu = false
+
+[editor.workspace-trust]
+level = "insecure"
 
 [editor]
-insecure = true
 bufferline = "multiple"
 true-color = true
 undercurl = true

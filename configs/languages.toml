@@ -16,7 +16,7 @@ command = "uwu_colors"
 
 # [language-server.typescript-language-server]
 [language-server.tsgo]
-command = "tsgo"
+command = "tsc"
 args = ["--lsp", "--stdio"]
 
 [language-server.typescript-language-server.config.typescript]
@@ -89,9 +89,9 @@ name = "typescript"
 formatter = { command = "prettier", args = ["--parser", "typescript"] }
 file-types = ["ts"]
 language-servers = [
-  # { name = "tsgo", except-features = ["format"] },
-  { name = "tsgo", except-features = ["format", "completion", "code-action"] },
-  { name = "typescript-language-server", only-features = ["completion", "code-action"] },
+  { name = "tsgo", except-features = ["format"] },
+  # { name = "tsgo", except-features = ["format", "completion", "code-action"] },
+  # { name = "typescript-language-server", only-features = ["completion", "code-action"] },
   { name = "eslint", except-features = ["format"] },
   { name = "emmet-ls" },
   { name = "uwu_colors" },
@@ -105,9 +105,9 @@ formatter = { command = "prettier", args = ["--stdin-filepath", "file.tsx"] }
 block-comment-tokens = [{start = "{/*", end = "*/}"}]
 file-types = ["tsx"]
 language-servers = [
-  # { name = "tsgo", except-features = ["format"] },
-  { name = "tsgo", except-features = ["format", "completion", "code-action"] },
-  { name = "typescript-language-server", only-features = ["completion", "code-action"] },
+  { name = "tsgo", except-features = ["format"] },
+  # { name = "tsgo", except-features = ["format", "completion", "code-action"] },
+  # { name = "typescript-language-server", only-features = ["completion", "code-action"] },
   { name = "eslint", except-features = ["format"] },
   { name = "emmet-ls" },
   { name = "uwu_colors" },
