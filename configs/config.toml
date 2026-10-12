@@ -1,4 +1,4 @@
-theme = "alexandria"
+theme = "dark_plus_adjusted"
 
 [editor.lsp]
 display-messages = true
